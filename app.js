@@ -1,6 +1,6 @@
 let form = document.querySelector('form');
 let guidance = document.querySelector('.guidance');
-let previousGuesses = document.querySelector('.previousGuess');
+let previousGuesses = document.querySelector('.previousGuesses');
 let feedback = document.querySelector('.feedback');
 let hint = document.querySelector('.hint');
 
