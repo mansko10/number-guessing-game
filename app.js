@@ -35,6 +35,15 @@ form.addEventListener('submit', e => {
         hint.textContent = 'Previous guess was too low!'
     } else {
         hint.remove();
+
+        let reloadButton = document.createElement('button');
+        reloadButton.textContent = 'Start new game';
+
+        guidance.appendChild(reloadButton);
+
+        reloadButton.addEventListener('click', e => {
+            location.reload();
+        })
     }
 
     form.reset();
