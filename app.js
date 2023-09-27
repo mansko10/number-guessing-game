@@ -9,5 +9,7 @@ let randomNumber = Math.ceil(Math.random() * 100);
 form.addEventListener('submit', e => {
     e.preventDefault();
 
+    guidance.style.display = 'block';
+
     form.reset();
 })
