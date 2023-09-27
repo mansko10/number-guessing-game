@@ -7,3 +7,7 @@ body {
 .guidance {
     display: none;
 }
+
+.feedback {
+    padding: 10px;
+}
