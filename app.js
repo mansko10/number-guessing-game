@@ -11,5 +11,7 @@ form.addEventListener('submit', e => {
 
     guidance.style.display = 'block';
 
+    let userGuess = e.target.userGuess.value;
+
     form.reset();
 })
