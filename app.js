@@ -13,5 +13,7 @@ form.addEventListener('submit', e => {
 
     let userGuess = e.target.userGuess.value;
 
+    previousGuesses.innerHTML += `<span> ${userGuess} </span>`;
+
     form.reset();
 })
