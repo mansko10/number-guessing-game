@@ -29,5 +29,13 @@ form.addEventListener('submit', e => {
         feedback.style.color = 'white';
     }
 
+    if (userGuess > randomNumber) {
+        hint.textContent = 'Previous guess was too high!'
+    } else if (userGuess < randomNumber) {
+        hint.textContent = 'Previous guess was too low!'
+    } else {
+        hint.remove();
+    }
+
     form.reset();
 })
