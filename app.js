@@ -34,6 +34,7 @@ form.addEventListener('submit', e => {
     } else if (userGuess < randomNumber) {
         hint.textContent = 'Previous guess was too low!'
     } else {
+        form.remove();
         hint.remove();
 
         let reloadButton = document.createElement('button');
