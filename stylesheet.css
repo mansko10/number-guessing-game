@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+}
+
+.guidance {
+    display: none;
+}
