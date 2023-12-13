@@ -3,6 +3,7 @@ let guidance = document.querySelector('.guidance');
 let previousGuesses = document.querySelector('.previousGuesses');
 let feedback = document.querySelector('.feedback');
 let hint = document.querySelector('.hint');
+let counter = 0;
 
 let randomNumber = Math.ceil(Math.random() * 100);
 
@@ -40,6 +41,23 @@ function provideFeedback(userGuess, randomNumber) {
     }
 }
 
+function countTurns(counter) {
+    console.log(counter);
+    if (counter === 10) {
+        form.remove();
+        hint.remove();
+
+        let reloadButton = document.createElement('button');
+        reloadButton.textContent = 'Start new game';
+
+        guidance.appendChild(reloadButton);
+
+        reloadButton.addEventListener('click', e => {
+            location.reload();
+        })
+    }
+}
+
 form.addEventListener('submit', e => {
     e.preventDefault();
 
@@ -52,6 +70,7 @@ form.addEventListener('submit', e => {
     displayResult(userGuess, randomNumber);
     provideFeedback(userGuess, randomNumber);
     
-
+    counter++;
+    countTurns(counter);
     form.reset();
 })
