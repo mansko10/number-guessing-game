@@ -20,17 +20,7 @@ function displayResult(userGuess, randomNumber) {
     }
 }
 
-form.addEventListener('submit', e => {
-    e.preventDefault();
-
-    guidance.style.display = 'block';
-
-    let userGuess = parseInt(e.target.userGuess.value);
-
-    previousGuesses.innerHTML += `<span> ${userGuess} </span>`;
-
-    displayResult(userGuess, randomNumber);
-
+function provideFeedback(userGuess, randomNumber) {
     if (userGuess > randomNumber) {
         hint.textContent = 'Previous guess was too high!'
     } else if (userGuess < randomNumber) {
@@ -48,6 +38,20 @@ form.addEventListener('submit', e => {
             location.reload();
         })
     }
+}
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    guidance.style.display = 'block';
+
+    let userGuess = parseInt(e.target.userGuess.value);
+
+    previousGuesses.innerHTML += `<span> ${userGuess} </span>`;
+
+    displayResult(userGuess, randomNumber);
+    provideFeedback(userGuess, randomNumber);
+    
 
     form.reset();
 })
