@@ -45,7 +45,7 @@ form.addEventListener('submit', e => {
 
     guidance.style.display = 'block';
 
-    let userGuess = parseInt(e.target.userGuess.value);
+    let userGuess = +e.target.userGuess.value;
 
     previousGuesses.innerHTML += `<span> ${userGuess} </span>`;
 
