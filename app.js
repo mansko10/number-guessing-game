@@ -8,6 +8,18 @@ let randomNumber = Math.ceil(Math.random() * 100);
 
 console.log(randomNumber);
 
+function displayResult(userGuess, randomNumber) {
+    if (userGuess !== randomNumber) {
+        feedback.textContent = 'WRONG!';
+        feedback.style.backgroundColor = 'red';
+        feedback.style.color = 'white';
+    } else {
+        feedback.textContent = 'Congratulations! You got it right!';
+        feedback.style.backgroundColor = 'green';
+        feedback.style.color = 'white';
+    }
+}
+
 form.addEventListener('submit', e => {
     e.preventDefault();
 
@@ -17,17 +29,7 @@ form.addEventListener('submit', e => {
 
     previousGuesses.innerHTML += `<span> ${userGuess} </span>`;
 
-    if (userGuess !== randomNumber) {
-        feedback.textContent = 'WRONG!';
-
-        feedback.style.backgroundColor = 'red';
-        feedback.style.color = 'white';
-    } else {
-        feedback.textContent = 'Congratulations! You got it right!';
-
-        feedback.style.backgroundColor = 'green';
-        feedback.style.color = 'white';
-    }
+    displayResult(userGuess, randomNumber);
 
     if (userGuess > randomNumber) {
         hint.textContent = 'Previous guess was too high!'
